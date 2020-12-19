@@ -1,0 +1,28 @@
+#server
+server:
+  port: 8888
+  servlet:
+    context-path: /
+
+
+#database connection config
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///learningweb?serverTimezone=UTC
+    username: root
+    password: weng6622
+    type: com.alibaba.druid.pool.DruidDataSource
+
+
+# mybatis-config
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.tamiflu.firstspringboot.entity
+  configuration:
+    map-underscore-to-camel-case: true
+
+# log of sql
+logging:
+  level:
+    com.tamiflu.learningweb.mapper: DEBUG
